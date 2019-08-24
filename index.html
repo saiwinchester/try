@@ -71,18 +71,27 @@ left: 48%;
   }
 }
 
-.preloader {
+#preloader {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  right:0;
+  bottom:0;
+  background-color: #fefefe;
+  z-index: 99;
   height: 100%;
-  z-index: 9999;
+}
+
+#status {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
   background-image: url('images/logo-black.gif');
   background-repeat: no-repeat;
-  background-color: #fff;
   background-position: center;
-
+  margin: -100px 0 0 -100px;  
 }
 
 
@@ -613,10 +622,12 @@ left: 48%;
 
   <script>
 
-$(window).load(function() {
-  $('.preloader').fadeOut('slow');
-});
-
+jQuery(window).load(function() {
+  jQuery('#status').fadeOut();
+  
+  jQuery('#preloader').delay(1000).fadeOut('slow');
+  
+})
 
 
 
