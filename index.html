@@ -28,10 +28,134 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/custom.css">
 
+  <style>
+  nav .nav-link li a{
+  color: black !important;
+  }
+
+  .spinner1 {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 48%;
+    left: 48%;
+
+  }
+
+  .double-bounce1, .double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #333;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+  animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-bounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
+}
+@keyframes sk-bounce {
+  0%, 100% { 
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% { 
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
+.spinner-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #7971ea;
+  z-index: 999999;
+}
+
+#preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999999;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  background: #333 url('http://files.mimoymima.com/images/loading.gif') no-repeat center center;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+
+  position: relative;
+  margin: 100px auto;
+}
+
+.double-bounce1, .double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #333;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+  animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-bounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bounce {
+  0%, 100% { 
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% { 
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
+
+.spinner-wrapper {
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #ff6347;
+z-index: 999999;
+}
+  </style>
+
 </head>
 
-<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+    <div class="spinner">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+      </div>
   <div class="site-wrap">
 
     <div class="site-mobile-menu site-navbar-target">
@@ -78,7 +202,7 @@
 
     <div class="intro-section " id="home-section">
 
-      <div class="slide-1" style="background-image: url('images/hero_1.jpg');" data-stellar-background-ratio="0.5">
+      <div class="slide-1 " style="background-image: url('images/hero_1.jpg'); background-repeat: no-repeat ; background-size: " data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row align-items-center"  >
             <div class="col-12 mt-5">
@@ -95,7 +219,8 @@
 
                 </div>
 
-                <div class="col-lg-4 ml-auto " data-aos="fade-up" data-aos-delay="100">
+             
+                <div class="col-lg-4 ml-auto align-self-start mb-4 mb-sm-0 " data-aos="fade-up" data-aos-delay="100">
                   <div class="p-4 rounded bg-white why-choose-us-box mb-3" style="border-radius: 50px !important;">
                     <h3 class="text-center text-dark">Why choose us?</h3>
                     <br>
@@ -151,6 +276,7 @@
 
 
                 </div>
+             
               </div>
             </div>
 
@@ -182,7 +308,7 @@
           <div class="col-lg-7 mb-5" data-aos="fade-up" data-aos-delay="100">
             <img src="images/undraw_youtube_tutorial.svg" alt="Image" class="img-fluid">
           </div>
-          <div class="col-lg-4 ml-auto" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-4 ml-auto " data-aos="fade-up" data-aos-delay="200">
             <h2 class="text-black mb-4">Learn the Best and the Latest Technologies</h2>
             <p class="mb-4">An amateur programmer spends a lot of time in deciding what to learn first, we have curated
               a course
@@ -235,7 +361,7 @@
 
         <div class="row justify-content-center">
           <div class="text-center">
-            <a href="" class="btn btn-outline-primary" style="background:white; border:1 px solid #7971ea;">Learn
+            <a href="" class="btn btn-outline-primary" style="background:white; border:1 px solid #7971ea; visibility: hidden;">Learn
               More</a>
           </div>
         </div>
@@ -435,7 +561,7 @@
 
 
 
-            <h2 class="section-title mb-3">Message Us</h2>
+            <h2 class="section-title mb-3 text-center">Message Us</h2>
             <!-- <p class="mb-5">Natus totam voluptatibus animi aspernatur ducimus quas obcaecati mollitia quibusdam temporibus culpa dolore molestias blanditiis consequuntur sunt nisi.</p> -->
 
             <form method="post" data-aos="fade">
@@ -467,9 +593,10 @@
               </div>
 
               <div class="form-group row">
-                <div class="col-md-6">
+                <div class="col-md-6 ">
 
                   <input type="submit" class="btn btn-primary py-3 px-5 btn-block btn-pill" value="Send Message">
+               
                 </div>
               </div>
 
@@ -496,8 +623,8 @@
             <h3>Links</h3>
             <ul class="list-unstyled footer-links">
               <li><a href="#home-section">Home</a></li>
-              <li><a href="#courses-section">About</a></li>
-              <li><a href="#programs-section">Program</a></li>
+              <li><a href="#programs-section">About</a></li>
+              <li><a href="#courses-section">Program</a></li>
               <li><a href="#teachers-section">Team</a></li>
             </ul>
           </div>
@@ -540,9 +667,41 @@
       </div>
     </footer>
 
-
+  </div>
 
   </div> <!-- .site-wrap -->
+
+  <script>
+        $(document).ready(function() {
+
+$(window).on("load", function() {
+preloaderFadeOutTime = 500;
+function hidePreloader() {
+var preloader = $('.spinner-wrapper');
+preloader.fadeOut(preloaderFadeOutTime);
+}
+hidePreloader();
+});
+}); 
+
+
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+
+
+
+  </script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
 
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
