@@ -34,7 +34,7 @@
   }
   
 
-.preloader {
+/* .preloader {
   position: fixed;
   left: 0;
   top: 0;
@@ -45,8 +45,8 @@
   background-image: url('images/logo-black.gif');
 
   
-}
-
+} */
+/* 
 .loader {
     display: block;
     position: fixed;
@@ -58,6 +58,47 @@
     background: #fafafa url(images/logo-black.gif) no-repeat center center;
     text-align: center;
     color: #999;
+} */
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  background-color: #333;
+
+  position: absolute;
+top: 48%;
+left: 48%;
+  -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+  animation: sk-rotateplane 1.2s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-rotateplane {
+  0% { -webkit-transform: perspective(120px) }
+  50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+  100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+}
+
+@keyframes sk-rotateplane {
+  0% { 
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg) 
+  } 50% { 
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg) 
+  } 100% { 
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
+}
+
+.spinner-wrapper {
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #ff6347;
+z-index: 999999;
 }
 
 
@@ -69,9 +110,13 @@
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 
   <!--CSS Spinner-->
-  <div class="loader">loading haaa...</div>
+  <!-- <div class="loader">loading haaa...</div>
 
-  <div class="site-wrap">
+  <div class="site-wrap"> -->
+
+      <div class="spinner-wrapper">
+          <div class="spinner"></div>
+          </div>
 
             
     <div class="site-mobile-menu site-navbar-target">
@@ -611,17 +656,23 @@
   <script src="js/main.js"></script>
 
   <script>
-    // $(window).load(function() {
-    //     $(".preloader").fadeOut(250);
-    // })
-    
-    // $(window).load(function(){
-    //     $('.loader').fadeOut("slow");
-    //  });
+   
+    // $(document).ready(function() {
+    //     $('.loader').fadeOut(1000);  /*FadeOut after page loaded*/
+    //     console.log("document loaded!");
+    // });
+
     $(document).ready(function() {
-        $('.loader').fadeOut(1000);  /*FadeOut after page loaded*/
-        console.log("document loaded!");
-    });
+//Preloader
+$(window).on("load", function() {
+preloaderFadeOutTime = 500;
+function hidePreloader() {
+var preloader = $('.spinner-wrapper');
+preloader.fadeOut(preloaderFadeOutTime);
+}
+hidePreloader();
+});
+});
     
     
     
