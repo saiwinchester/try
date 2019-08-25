@@ -32,71 +32,19 @@
   nav .nav-link li a{
   color: black !important;
   }
-  .spinner-wrapper {
-position: fixed;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-background-color: #ff6347;
-z-index: 999999;
-}
-  .spinner {
-  width: 40px;
-  height: 40px;
-  background-color: #333;
-  position: absolute;
-top: 48%;
-left: 48%;
-  -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
-  animation: sk-rotateplane 1.2s infinite ease-in-out;
-}
-
-@-webkit-keyframes sk-rotateplane {
-  0% { -webkit-transform: perspective(120px) }
-  50% { -webkit-transform: perspective(120px) rotateY(180deg) }
-  100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
-}
-
-@keyframes sk-rotateplane {
-  0% { 
-    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
-    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg) 
-  } 50% { 
-    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
-    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg) 
-  } 100% { 
-    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
-    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
-  }
-}
-
-.preloader {
-  position: absolute;
   
 
-  background-color: #fefefe;
-  z-index: 99;
-  width: 200px;
-  height: 200px;
-  left: 50%;
-  top: 50%;
+.preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999999;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
   background-image: url('images/logo-black.gif');
-  background-repeat: no-repeat;
-  background-position: center;
-  margin: -100px 0 0 -100px;  
-}
 
-#status {
-  width: 200px;
-  height: 200px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  background-image: url('images/logo-black.gif');
-  background-repeat: no-repeat;
-  background-position: center;
-  margin: -100px 0 0 -100px;  
+  
 }
 
 
@@ -108,13 +56,11 @@ left: 48%;
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 
   <!--CSS Spinner-->
+  <div class="preloader"></div>
 
   <div class="site-wrap">
 
-      <div id="preloader">
-          
-        </div>
-        
+            
     <div class="site-mobile-menu site-navbar-target">
       <div class="site-mobile-menu-header">
         <div class="site-mobile-menu-close mt-3">
@@ -629,11 +575,9 @@ left: 48%;
   </div> <!-- .site-wrap -->
 
   <script>
-
-$(document).ready(function() {
+$(window).load(function() {
     $(".preloader").fadeOut(250);
 })
-
 
 
 
