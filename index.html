@@ -69,7 +69,7 @@
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 
   <!--CSS Spinner-->
-  <div class="loader">loading...</div>
+  <div class="loader">loading ha...</div>
 
   <div class="site-wrap">
 
@@ -588,13 +588,17 @@
   </div> <!-- .site-wrap -->
 
   <script>
-$(window).load(function() {
-    $(".preloader").fadeOut(250);
-})
+// $(window).load(function() {
+//     $(".preloader").fadeOut(250);
+// })
 
-$(window).load(function(){
-    $('.loader').fadeOut("slow");
- });
+// $(window).load(function(){
+//     $('.loader').fadeOut("slow");
+//  });
+$(document).ready(function() {
+    $('.loader').fadeOut(1000);  /*FadeOut after page loaded*/
+    console.log("document loaded!");
+});
 
 
 
