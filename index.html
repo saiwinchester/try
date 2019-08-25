@@ -47,6 +47,19 @@
   
 }
 
+.loader {
+    display: block;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: #fafafa url(images/logo-black.gif) no-repeat center center;
+    text-align: center;
+    color: #999;
+}
+
 
   </style>
 
@@ -56,7 +69,7 @@
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 
   <!--CSS Spinner-->
-  <div class="preloader"></div>
+  <div class="loader">loading</div>
 
   <div class="site-wrap">
 
@@ -578,6 +591,10 @@
 $(window).load(function() {
     $(".preloader").fadeOut(250);
 })
+
+$(window).load(function(){
+    $('.loader').fadeOut("slow");
+ });
 
 
 
