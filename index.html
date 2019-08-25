@@ -656,22 +656,22 @@ z-index: 999999;
 
   <script>
    
-    // $(document).ready(function() {
-    //     $('.loader').fadeOut(1000);  /*FadeOut after page loaded*/
-    //     console.log("document loaded!");
-    // });
+    $(document).ready(function() {
+        $('.spinner-wrapper').fadeOut(1000);  /*FadeOut after page loaded*/
+        console.log("document loaded!");
+    });
 
     $(document).ready(function() {
-//Preloader
-$(window).on("load", function() {
-preloaderFadeOutTime = 500;
-function hidePreloader() {
-var preloader = $('.spinner-wrapper');
-preloader.fadeOut(preloaderFadeOutTime);
-}
-hidePreloader();
-});
-});
+// //Preloader
+// $(window).on("load", function() {
+// preloaderFadeOutTime = 500;
+// function hidePreloader() {
+// var preloader = $('.spinner-wrapper');
+// preloader.fadeOut(preloaderFadeOutTime);
+// }
+// hidePreloader();
+// });
+// });
     
     
     
